@@ -1,4 +1,64 @@
 # NeLLCom_Lex_CogSci
 Code for the CogSci 2026 paper "Modeling Human-Like Color Naming Behavior in Context"
 
-TO BE UPDATED SOON!
+![GitHub](https://img.shields.io/github/license/facebookresearch/EGG)
+[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
+
+## Introduction
+
+NeLLCom-Lex can be used to simulate the evolution of lexical meaning within one generation of learners, whereas NeLLCom primarily focused on the emergence of universal word order properties. In NeLLCom-Lex, agents communicate within a simplified referential world using pre-defined lexicons acquired during a supervised learning phase.
+More details can be found in our [paper](https://aclanthology.org/2025.findings-emnlp.580/)
+
+
+## Agent Architecture
+
+Both speaking and listening agents are composed of feedforward neural networks (FNNs), following the common architecture design in referential communication games.
+
+
+## Installing NeLLCom-Lex
+
+1. Cloning NeLLCom-Lex:
+   ```
+   git clone git@github.com:yuqing0304/NeLLCom_Lex_CogSci.git
+   cd EGG
+   pip install --editable .
+   
+   cd NeLLCom-Lex/EGG/egg/zoo/color_game_up
+   ```
+4. Then, we can run a game, e.g., the color naming experiments conducted in the paper:
+    ```bash
+    sbatch run.sh
+    ```
+
+
+## NeLLCom-Lex structure
+
+* `data/` contains the full dataset of the colors and their names that are used in the paper.
+* `train.py` contains the actual logic implementation.
+* `models.py`, `datasets.py`, and `utils_condition.py` contain the models, datasets, and utility functions.
+
+
+## Citation
+If you find NeLLCom-Lex useful in your research, please consider citing:
+```
+@inproceedings{zhang-etal-2025-nellcom,
+    title = "{N}e{LLC}om-Lex: A Neural-agent Framework to Study the Interplay between Lexical Systems and Language Use",
+    author = {Zhang, Yuqing  and
+      {\"U}rker, Ecesu  and
+      Verhoef, Tessa  and
+      Boleda, Gemma  and
+      Bisazza, Arianna},
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2025",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.findings-emnlp.580/",
+    pages = "10929--10945",
+    ISBN = "979-8-89176-335-7"
+}
+```
