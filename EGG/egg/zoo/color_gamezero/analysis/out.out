@@ -1,0 +1,79 @@
+Traceback (most recent call last):
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 366, in <module>
+    process_multiple_files(args.input_files, args.output_file, args.rl_or_sl, args.use_label)
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 255, in process_multiple_files
+    with open(output_path, 'w') as output_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../color_game_group/condition_b_6lst/dump_context/msg_rf_seed123/epoch10.txt'
+Traceback (most recent call last):
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 366, in <module>
+    process_multiple_files(args.input_files, args.output_file, args.rl_or_sl, args.use_label)
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 255, in process_multiple_files
+    with open(output_path, 'w') as output_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../color_game_group/condition_b_6lst/dump_context/msg_rf_seed234/epoch10.txt'
+Traceback (most recent call last):
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 366, in <module>
+    process_multiple_files(args.input_files, args.output_file, args.rl_or_sl, args.use_label)
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 255, in process_multiple_files
+    with open(output_path, 'w') as output_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../color_game_group/condition_b_6lst/dump_context/msg_rf_seed345/epoch10.txt'
+Traceback (most recent call last):
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 366, in <module>
+    process_multiple_files(args.input_files, args.output_file, args.rl_or_sl, args.use_label)
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 255, in process_multiple_files
+    with open(output_path, 'w') as output_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../color_game_group/condition_b_6lst/dump_context/msg_rf_seed456/epoch10.txt'
+Traceback (most recent call last):
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 366, in <module>
+    process_multiple_files(args.input_files, args.output_file, args.rl_or_sl, args.use_label)
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 255, in process_multiple_files
+    with open(output_path, 'w') as output_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../color_game_group/condition_b_6lst/dump_context/msg_rf_seed567/epoch10.txt'
+Traceback (most recent call last):
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 366, in <module>
+    process_multiple_files(args.input_files, args.output_file, args.rl_or_sl, args.use_label)
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 255, in process_multiple_files
+    with open(output_path, 'w') as output_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../color_game_group/condition_b_6lst/dump_context/msg_rf_seed678/epoch10.txt'
+Traceback (most recent call last):
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 366, in <module>
+    process_multiple_files(args.input_files, args.output_file, args.rl_or_sl, args.use_label)
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 255, in process_multiple_files
+    with open(output_path, 'w') as output_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../color_game_group/condition_b_6lst/dump_context/msg_rf_seed777/epoch10.txt'
+Traceback (most recent call last):
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 366, in <module>
+    process_multiple_files(args.input_files, args.output_file, args.rl_or_sl, args.use_label)
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 255, in process_multiple_files
+    with open(output_path, 'w') as output_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../color_game_group/condition_b_6lst/dump_context/msg_rf_seed789/epoch10.txt'
+Traceback (most recent call last):
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 366, in <module>
+    process_multiple_files(args.input_files, args.output_file, args.rl_or_sl, args.use_label)
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 255, in process_multiple_files
+    with open(output_path, 'w') as output_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../color_game_group/condition_b_6lst/dump_context/msg_rf_seed888/epoch10.txt'
+Traceback (most recent call last):
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 366, in <module>
+    process_multiple_files(args.input_files, args.output_file, args.rl_or_sl, args.use_label)
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 255, in process_multiple_files
+    with open(output_path, 'w') as output_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../color_game_group/condition_b_6lst/dump_context/msg_rf_seed890/epoch10.txt'
+Traceback (most recent call last):
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 366, in <module>
+    process_multiple_files(args.input_files, args.output_file, args.rl_or_sl, args.use_label)
+  File "/gpfs/work3/0/prjs1171/slearning/EGG/egg/zoo/color_gamezero/analysis/4_informativeness.py", line 255, in process_multiple_files
+    with open(output_path, 'w') as output_file:
+FileNotFoundError: [Errno 2] No such file or directory: '../../color_game_group/condition_b_6lst/dump_context/msg_rf_seed999/epoch10.txt'
+
+JOB STATISTICS
+==============
+Job ID: 14789578
+Cluster: snellius
+User/Group: yzhang1/yzhang1
+State: FAILED (exit code 1)
+Cores: 1
+CPU Utilized: 00:03:31
+CPU Efficiency: 85.77% of 00:04:06 core-walltime
+Job Wall-clock time: 00:04:06
+Memory Utilized: 163.29 MB
+Memory Efficiency: 2.28% of 7.00 GB (7.00 GB/core)

@@ -1,0 +1,4 @@
+condition,epoch,mean_drift,std_drift,se_drift,mean_drift_kept,std_drift_kept,se_drift_kept
+dump,30,46.20,5.44,1.72,46.20,5.44,1.72
+dump_exp,30,48.44,4.15,1.31,48.44,4.15,1.31
+dump_context,30,47.31,4.85,1.53,47.31,4.85,1.53

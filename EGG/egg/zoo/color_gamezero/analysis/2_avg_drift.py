@@ -1,0 +1,140 @@
+import os
+import pickle
+import numpy as np
+import csv
+from plot_utils import *
+
+
+def extract_prototype(pkl_file):
+    """
+    Extracts prototype data from a pickle file.
+
+    Args:
+        pkl_file (str): Path to the .pkl file containing {color_name: (L, A, B)}.
+
+    Returns:
+        List of tuples: [(color_name, (L, A, B)), ...]
+    """
+    with open(pkl_file, "rb") as f:
+        data = pickle.load(f)
+
+    return [(color_name, tuple(lab)) for color_name, lab in data.items()]
+
+
+
+def differences_prototypes(data, data_human):
+    # Convert lists of (color_name, lab) to dictionaries
+    data_dict = dict(data)
+    human_dict = dict(data_human)
+
+    # Find common color names
+    common_names = set(data_dict.keys()) & set(human_dict.keys())
+
+    # Compute distances for common color names
+    differences = [
+        compute_cielab_distance(data_dict[name], human_dict[name])
+        for name in common_names
+    ]
+
+    avg_difference = np.mean(differences)
+    return avg_difference
+
+
+def differences_prototypes_kept(data, data_human, last_epoch):
+    kept_colors = [color_name for color_name, cielab in last_epoch]
+    # kept_colors = [color_name for color_name, hls in last_epoch]
+    results = []
+
+    for color_name, cielab in data:
+        # rgb = hls_to_rgb(*hls)
+        # target_lab = cs.cspace_convert(rgb, start="sRGB255", end="CIELab")  # Convert to CIELAB
+        target_lab = cielab
+        for c_name, t_lab in data_human:
+            if c_name == color_name:
+                if c_name in kept_colors:
+                    difference = compute_cielab_distance(target_lab, t_lab)
+                    results.append(difference)
+
+    avg_diff = np.mean(results)
+
+    return avg_diff
+
+def analyze_differences(prototype_file, prototype_file_human, words_kept = False):
+
+    prototype = extract_prototype(prototype_file)
+    if 'rf' in prototype_file:
+        last_epoch = extract_prototype(os.path.join(os.path.dirname(prototype_file), 'prototypes_rf_human_epoch30.pkl'))
+    else:
+        last_epoch = extract_prototype(os.path.join(os.path.dirname(prototype_file), 'prototypes_spk_human_epoch29.pkl'))
+    prototype_human = extract_prototype(prototype_file_human)
+    if not words_kept:
+        diff = differences_prototypes(prototype, prototype_human)
+    else:
+        diff = differences_prototypes_kept(prototype, prototype_human, last_epoch)
+    print(diff) 
+
+    return diff
+
+
+def compute_epoch_drift_across_seeds(epoch, seeds, label_prototype_path, base_dirs, output_file):
+    results = []
+
+    for condition, base_template in base_dirs.items():
+        drifts = []
+        drifts_kept = []
+
+        for seed in seeds:
+            base_path = base_template.format(seed=seed)
+            prototype_file = os.path.join(base_path, f'prototypes_rf_human_epoch{epoch}.pkl')
+
+            if not os.path.exists(prototype_file):
+                print(f"Warning: File {prototype_file} not found.")
+                continue
+
+            drift = analyze_differences(prototype_file, label_prototype_path)
+            drift_kept = analyze_differences(prototype_file, label_prototype_path, words_kept=True)
+
+            drifts.append(drift)
+            drifts_kept.append(drift_kept)
+
+        n = len(drifts)
+        mean_drift = np.mean(drifts)
+        std_drift = np.std(drifts)
+        se_drift = std_drift / np.sqrt(n)
+
+        mean_drift_kept = np.mean(drifts_kept)
+        std_drift_kept = np.std(drifts_kept)
+        se_drift_kept = std_drift_kept / np.sqrt(n)
+
+        results.append({
+            "condition": condition,
+            "epoch": epoch,
+            "mean_drift": f"{mean_drift:.2f}",
+            "std_drift": f"{std_drift:.2f}",
+            "se_drift": f"{se_drift:.2f}",
+            "mean_drift_kept": f"{mean_drift_kept:.2f}",
+            "std_drift_kept": f"{std_drift_kept:.2f}",
+            "se_drift_kept": f"{se_drift_kept:.2f}"
+        })
+
+    # Write to CSV
+    with open(output_file, "w", newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=results[0].keys())
+        writer.writeheader()
+        for row in results:
+            writer.writerow(row)
+
+
+# === Run for epoch10 ===
+epoch = 30
+seeds = [111, 123, 222, 333, 345, 456, 567, 777, 891, 999]
+label_prototype_path = './prototypes.pkl'
+
+base_dirs = {
+    "dump": "../condition3_generated_ARR/experiment1/dump/msg_rf_seed{seed}/",
+    "dump_exp": "../condition3_generated_ARR/experiment1/dump_exp/msg_rf_seed{seed}/",
+    "dump_context": "../condition3_generated_ARR/experiment1/dump_context/msg_rf_seed{seed}/"
+}
+
+output_file = f"drift_epoch{epoch}_summary.csv"
+compute_epoch_drift_across_seeds(epoch, seeds, label_prototype_path, base_dirs, output_file)
