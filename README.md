@@ -17,13 +17,13 @@ Both speaking and listening agents are composed of feedforward neural networks (
 
 ## Installing NeLLCom-Lex
 
-1. Cloning NeLLCom-Lex:
+1. Cloning NeLLCom_Lex_CogSci:
    ```
    git clone git@github.com:yuqing0304/NeLLCom_Lex_CogSci.git
    cd EGG
    pip install --editable .
    
-   cd NeLLCom-Lex/EGG/egg/zoo/color_game_up
+   cd NeLLCom_Lex_CogSci/EGG/egg/zoo/color_game_up
    ```
 4. Then, we can run a game, e.g., the color naming experiments conducted in the paper:
     ```bash
