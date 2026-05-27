@@ -6,8 +6,8 @@ Code for the CogSci 2026 paper "Modeling Human-Like Color Naming Behavior in Con
 
 ## Introduction
 
-NeLLCom-Lex can be used to simulate the evolution of lexical meaning within one generation of learners, whereas NeLLCom primarily focused on the emergence of universal word order properties. In NeLLCom-Lex, agents communicate within a simplified referential world using pre-defined lexicons acquired during a supervised learning phase.
-More details can be found in our [paper1](https://aclanthology.org/2025.findings-emnlp.580/) and [paper2](https://arxiv.org/abs/2604.25674)
+NeLLCom-Lex can be used to simulate the evolution of lexical meaning within one generation of learners. In NeLLCom-Lex, agents communicate within a simplified referential world using pre-defined lexicons acquired during a supervised learning phase.
+More details can be found in our paper: [NeLLCom-Lex: A Neural-agent Framework to Study the Interplay between Lexical Systems and Language Use](https://aclanthology.org/2025.findings-emnlp.580/) and [Modeling Human-Like Color Naming Behavior in Context](https://arxiv.org/abs/2604.25674)
 
 
 ## Agent Architecture
